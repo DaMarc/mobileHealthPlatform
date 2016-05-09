@@ -1,32 +1,21 @@
-# Hello World PhoneGap Template [![bitHound Score][bithound-img]][bithound-url]
+# Mobile Health Platform
 
-A PhoneGap Hello World template
+A bootstrap for the mobile health platform
+
+## Git Manifest
+
+We want to use a version control via git. We also want to follow the feature branch approach. A good documentation can be found here:
+
+## [Feature Branch Workflow][git-feature-branch]
+
+you can download the project via:
+
+	git clone https://github.com/mobody/mobileHealthPlatform.git
+
 
 ## Usage
 
-#### PhoneGap CLI
-
-The hello-world template is the default when you create a new application using the [phonegap-cli][phonegap-cli-url].
-
-    phonegap create my-app
-
-Create an app using this template specifically:
-
-    phonegap create my-app --template hello-world
-
-To see a list of other available PhoneGap templates:
-
-    phonegap template list
-
 ## [config.xml][config-xml]
-
-#### android-minSdkVersion (Android only)
-
-Minimum SDK version supported on the target device. Maximum version is blank by default.
-
-This template sets the minimum to `14`.
-
-    <preference name="android-minSdkVersion" value="14" />
 
 #### &lt;access ...&gt; (All)
 
@@ -67,3 +56,4 @@ Another good resource for generating a good CSP declaration is [CSP is Awesome][
 [cordova-plugin-whitelist]: http://cordova.apache.org/docs/en/latest/reference/cordova-plugin-whitelist
 [cordova-plugin-whitelist-csp]: http://cordova.apache.org/docs/en/latest/reference/cordova-plugin-whitelist#content-security-policy
 [csp-is-awesome]: http://cspisawesome.com
+[git-feature-branch]: https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow
