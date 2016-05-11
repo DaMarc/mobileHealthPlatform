@@ -1,12 +1,12 @@
 {
-  "name": "phonegap-template-hello-world",
+  "name": "mobileHealthPlatform",
   "version": "4.0.2",
-  "description": "> A Hello World template built with PhoneGap",
+  "description": "> A Framework for Apps in the healthsector built with PhoneGap",
   "repository": {
     "type": "git",
-    "url": "https://github.com/phonegap/phonegap-app-hello-world.git"
+    "url": "https://github.com/mobody/mebileHealthPlatform.git"
   },
-  "author": "PhoneGap Team",
+  "author": "CAMD",
   "license": "Apache-2.0.0",
   "keywords": [
     "ecosystem:phonegap",
@@ -15,7 +15,7 @@
     "phonegap:template"
   ],
   "bugs": {
-    "url": "https://github.com/phonegap/phonegap-app-hello-world/issues"
+    "url": "https://github.com/mobody/mebileHealthPlatform/issues"
   },
-  "homepage": "https://github.com/phonegap/phonegap-app-hello-world"
+  "homepage": "https://github.com/mobody/mebileHealthPlatform"
 }
