@@ -15,45 +15,18 @@ you can download the project via:
 
 ## Usage
 
-## [config.xml][config-xml]
+#### Install npm dependencies
 
-#### &lt;access ...&gt; (All)
+In the file package.json you can see that we need gulp and [laravel-elixir][laravel-elixir]. laravel-elixir is a wrapper around gulp, which brings us super easy usage of sass mixin (for css structuring) and browserify (which lets us structur our javascript code very nicely). Just have a look at gulpfile.js. 
+With two lines of code, laravel-elixir allows us to bundle our sass files, and our .js files. we can even run 
 
-This template defaults to wide open access.
+	gulp --production
 
-    <access origin="*" />
+and we get an uglyfied version.
 
-It is strongly encouraged that you restrict access to external resources in your application before releasing to production.
+Another dependency we integrated in our framework is [jQuery Mobile][jquery-mobile], which is a HTML5-based user interface system.
 
-For more information on whitelist configuration, see the [Cordova Whitelist Guide][cordova-whitelist-guide] and the [Cordova Whitelist Plugin documentation][cordova-plugin-whitelist]
-
-## [www/index.html][index-html]
-
-#### Content Security Policy (CSP)
-
-The default CSP is similarly open:
-
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
-
-Much like the access tag above, you are strongly encouraged to use a more restrictive CSP in production.
-
-A good starting point declaration might be:
-
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" />
-
-For more information on the Content Security Policy, see the [section on CSP in the Cordova Whitelist Plugin documentation][cordova-plugin-whitelist-csp].
-
-Another good resource for generating a good CSP declaration is [CSP is Awesome][csp-is-awesome]
-
-
-[phonegap-cli-url]: http://github.com/phonegap/phonegap-cli
-[cordova-app]: http://github.com/apache/cordova-app-hello-world
-[bithound-img]: https://www.bithound.io/github/phonegap/phonegap-app-hello-world/badges/score.svg
-[bithound-url]: https://www.bithound.io/github/phonegap/phonegap-app-hello-world
-[config-xml]: https://github.com/phonegap/phonegap-template-hello-world/blob/master/config.xml
-[index-html]: https://github.com/phonegap/phonegap-template-hello-world/blob/master/www/index.html
-[cordova-whitelist-guide]: https://cordova.apache.org/docs/en/dev/guide/appdev/whitelist/index.html
-[cordova-plugin-whitelist]: http://cordova.apache.org/docs/en/latest/reference/cordova-plugin-whitelist
-[cordova-plugin-whitelist-csp]: http://cordova.apache.org/docs/en/latest/reference/cordova-plugin-whitelist#content-security-policy
-[csp-is-awesome]: http://cspisawesome.com
+[package-json]: https://github.com/phonegap/phonegap-template-hello-world/blob/master/config.xml
 [git-feature-branch]: https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow
+[laravel-elixir]: https://github.com/laravel/elixir
+[jquery-mobile]: http://jquerymobile.com/
