@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/app.css"/>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.js"></script>
 
   </head>
   <body>
@@ -26,6 +26,33 @@
         <p>I'm first in the source order so I'm shown as the page.</p>
         <p>View internal page called <a href="#bar">bar</a></p>
       </div><!-- /content -->
+
+<canvas id="testChart" width="200" height="200"></canvas>
+
+<script>
+var ctx = document.getElementById("testChart");
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["06:55", "08:00", "12:00", "14:01", "16:05", "18:00", "20:02"],
+        datasets: [{
+            label: '# pulse frequencies Monday',
+            data: [77, 65, 90, 67, 64, 88, 87]
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
+
+
 
       <div data-role="footer">
         <h4>Page Footer</h4>
