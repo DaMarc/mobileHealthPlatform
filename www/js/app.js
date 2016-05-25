@@ -1,11 +1,18 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 <<<<<<< HEAD
+(function (global){
+
+; jQuery = global.jQuery = require("C:\\Users\\Catja Schmutz\\Documents\\GIB\\SEMESTER\\SEMESTER 6\\Gruppenarbeit\\mobileHealthPlatform\\node_modules\\jquery\\dist\\jquery.js");
+; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
+=======
+<<<<<<< HEAD
 =======
 (function (global){
 
 ; $ = global.$ = require("/home/moe/Documents/fhkn/gib/sem6/teamprojekt/mobileHealthPlatform/node_modules/jquery/dist/jquery.js");
 ; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 >>>>>>> structure/vendor-functions
+>>>>>>> master
 /*!
 * jQuery Mobile 1.4.1
 * Git HEAD hash: 3455adaa46cd408e7775e662557432aafd43a725 <> Date: Thu Feb 13 2014 12:05:10 UTC
@@ -14939,17 +14946,26 @@ $.widget( "ui.tabs", {
 }));
 
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 },{}],2:[function(require,module,exports){
 =======
+>>>>>>> master
 ; browserify_shim__define__module__export__(typeof $.mobile != "undefined" ? $.mobile : window.$.mobile);
 
 }).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+<<<<<<< HEAD
+},{"C:\\Users\\Catja Schmutz\\Documents\\GIB\\SEMESTER\\SEMESTER 6\\Gruppenarbeit\\mobileHealthPlatform\\node_modules\\jquery\\dist\\jquery.js":2}],2:[function(require,module,exports){
+(function (global){
+; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
+=======
 },{"/home/moe/Documents/fhkn/gib/sem6/teamprojekt/mobileHealthPlatform/node_modules/jquery/dist/jquery.js":2}],2:[function(require,module,exports){
 (function (global){
 ; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 >>>>>>> structure/vendor-functions
+>>>>>>> master
 /*!
  * jQuery JavaScript Library v2.2.4
  * http://jquery.com/
@@ -24766,6 +24782,14 @@ return jQuery;
 }));
 
 <<<<<<< HEAD
+; browserify_shim__define__module__export__(typeof $ != "undefined" ? $ : window.$);
+
+}).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+=======
+<<<<<<< HEAD
+>>>>>>> master
 },{}],3:[function(require,module,exports){
 (function (global){
 'use strict';
