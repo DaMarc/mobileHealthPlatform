@@ -4,7 +4,7 @@
   "description": "> A Framework for Apps in the healthsector built with PhoneGap",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mobody/mebileHealthPlatform.git"
+    "url": "https://github.com/mobody/mobileHealthPlatform.git"
   },
   "author": "CAMD",
   "license": "Apache-2.0.0",
@@ -15,7 +15,28 @@
     "phonegap:template"
   ],
   "bugs": {
-    "url": "https://github.com/mobody/mebileHealthPlatform/issues"
+    "url": "https://github.com/mobody/mobileHealthPlatform/issues"
   },
-  "homepage": "https://github.com/mobody/mebileHealthPlatform"
+  "homepage": "https://github.com/mobody/mobileHealthPlatform",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "jquery-mobile": "^1.4.1",
+    "laravel-elixir": "^5.0.0"
+  },
+  "devDependencies": {
+    "browserify-shim": "^3.8.12"
+  },
+  "browser": {
+    "jquery": "./node_modules/jquery/dist/jquery.js",
+    "jquery-mobile": "./node_modules/jquery-mobile/dist/jquery.mobile.js"
+  },
+  "browserify-shim": {
+    "jquery": "$",
+    "jquery-mobile" : { "exports": "$.mobile", "depends": [ "jquery:jQuery" ] }
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  }
 }
