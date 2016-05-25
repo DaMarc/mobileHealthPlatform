@@ -1,4 +1,8 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+(function (global){
+
+; $ = global.$ = require("/home/moe/Documents/fhkn/gib/sem6/teamprojekt/mobileHealthPlatform/node_modules/jquery/dist/jquery.js");
+; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 /*!
 * jQuery Mobile 1.4.1
 * Git HEAD hash: 3455adaa46cd408e7775e662557432aafd43a725 <> Date: Thu Feb 13 2014 12:05:10 UTC
@@ -14931,7 +14935,14 @@ $.widget( "ui.tabs", {
 
 }));
 
-},{}],2:[function(require,module,exports){
+; browserify_shim__define__module__export__(typeof $.mobile != "undefined" ? $.mobile : window.$.mobile);
+
+}).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"/home/moe/Documents/fhkn/gib/sem6/teamprojekt/mobileHealthPlatform/node_modules/jquery/dist/jquery.js":2}],2:[function(require,module,exports){
+(function (global){
+; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 /*!
  * jQuery JavaScript Library v2.2.4
  * http://jquery.com/
@@ -24747,15 +24758,17 @@ if ( !noGlobal ) {
 return jQuery;
 }));
 
-},{}],3:[function(require,module,exports){
-(function (global){
-'use strict';
+; browserify_shim__define__module__export__(typeof $ != "undefined" ? $ : window.$);
 
-var $ = require('jquery')(window);
-global.jQuery = require("jquery");
-require('../../../node_modules/jquery-mobile/dist/jquery.mobile.js');
+}).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../../../node_modules/jquery-mobile/dist/jquery.mobile.js":1,"jquery":2}]},{},[3]);
+},{}],3:[function(require,module,exports){
+'use strict';
+
+var $ = require('jquery');
+$.mobile = require('jquery-mobile');
+
+},{"jquery":2,"jquery-mobile":1}]},{},[3]);
 
 //# sourceMappingURL=app.js.map

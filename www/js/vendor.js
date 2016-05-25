@@ -24771,4 +24771,4 @@ $.mobile = require('jquery-mobile');
 
 },{"jquery":2,"jquery-mobile":1}]},{},[3]);
 
-//# sourceMappingURL=app.js.map
+//# sourceMappingURL=vendor.js.map
