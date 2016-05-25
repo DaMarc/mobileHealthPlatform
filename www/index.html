@@ -13,7 +13,6 @@
   <body>
 
     <!-- Start of first page -->
-
     <div data-role="page" id="foo">
 
       <div data-role="header">
@@ -21,9 +20,9 @@
       </div><!-- /header -->
 
       <div role="main" class="ui-content">
-        <p>I'm first in the source order so I'm shown as the page.</p>
-        <p>View internal page called <a href="#bar">bar</a></p>
-         <p>View internal page called <a href="#chart">chart</a></p>
+        <p>Startseite</p>
+        <p>Gehe zurück zu<a href="#bar">bar</a></p>
+         <p>Gehe zurück zu<a href="#chart">chart</a></p>
       </div><!-- /content -->
 
       <div data-role="footer">
@@ -46,7 +45,6 @@
       </div>
 
     <!-- Start of chart page -->
-
     <div data-role="page" id="chart">
 
       <div data-role="header">
@@ -55,32 +53,33 @@
 
       <div role="main" class="ui-content">
          
-         <canvas id="testChart" width="200" height="200"></canvas>
+        <canvas id="testChart" width="200" height="200"></canvas>
 
         <script>
-        var ctx = document.getElementById("testChart");
-        var myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-             labels: ["06:55", "08:00", "12:00", "14:01", "16:05", "18:00", "20:02"],
-                datasets: [{
-                    label: '# pulse frequencies Monday',
-                    data: [77, 65, 90, 67, 64, 88, 87]
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero:true
-                        }
-                    }]
-                }
-            }
-        });
+          var ruediger = document.getElementById("testChart");
+
+          var data = {
+              labels: ["06:55", "08:00", "12:00", "14:01", "16:05", "18:00", "20:02"],
+              datasets: [{
+                  label: '# pulse frequencies Monday',
+                  data: [77, 65, 90, 67, 64, 88, 87],
+                  backgroundColor: 'rgba(190,52,5,0.9)'
+              }]
+            };
+          var options = {
+                  scales: {
+                      yAxes: [{
+                          ticks: {
+                              beginAtZero:false
+                          }
+                      }]
+                  }
+              };
+
+          var myChart = new makeChart(ruediger,'pie',data, options);
         </script>
 
-        <p>View internal page called <a href="#foo">foo</a></p>
+        <p>Gehe zurück zu<a href="#foo">foo</a></p>
       </div><!-- /content -->
 
 

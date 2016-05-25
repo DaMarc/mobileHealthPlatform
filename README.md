@@ -24,6 +24,11 @@ Wir arbeiten mit dem Frontend Package Manager [npm][npm]. In der package.json Da
 
 Wir benutzen ein HTML5 User Interface System: [jQuery Mobile][jquery-mobile].
 
+#### ChartJS
+
+
+
+
 [package-json]: https://github.com/phonegap/phonegap-template-hello-world/blob/master/config.xml
 [git-feature-branch]: https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow
 [laravel-elixir]: https://github.com/laravel/elixir

@@ -9796,7 +9796,7 @@ module.exports = {
 },{}],42:[function(require,module,exports){
 (function (global){
 
-; $ = global.$ = require("C:\\Users\\Catja Schmutz\\Documents\\GIB\\SEMESTER\\SEMESTER 6\\Gruppenarbeit\\mobileHealthPlatform\\node_modules\\jquery\\dist\\jquery.js");
+; $ = global.$ = require("/home/moe/Documents/fhkn/gib/sem6/teamprojekt/mobileHealthPlatform/node_modules/jquery/dist/jquery.js");
 ; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 /*!
 * jQuery Mobile 1.4.1
@@ -24735,7 +24735,7 @@ $.widget( "ui.tabs", {
 }).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"C:\\Users\\Catja Schmutz\\Documents\\GIB\\SEMESTER\\SEMESTER 6\\Gruppenarbeit\\mobileHealthPlatform\\node_modules\\jquery\\dist\\jquery.js":43}],43:[function(require,module,exports){
+},{"/home/moe/Documents/fhkn/gib/sem6/teamprojekt/mobileHealthPlatform/node_modules/jquery/dist/jquery.js":43}],43:[function(require,module,exports){
 (function (global){
 ; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 /*!
@@ -38602,11 +38602,26 @@ return jQuery;
 },{}],45:[function(require,module,exports){
 'use strict';
 
+// Import Jquery & Jquery Mobile
 var $ = require('jquery');
 $.mobile = require('jquery-mobile');
 
+// Import ChartJS
 window.Chart = require('chart.js');
 
-},{"chart.js":1,"jquery":43,"jquery-mobile":42}]},{},[45]);
+require('./modules/makeChart.js');
+
+},{"./modules/makeChart.js":46,"chart.js":1,"jquery":43,"jquery-mobile":42}],46:[function(require,module,exports){
+"use strict";
+
+window.makeChart = function (inputelement, type, data, options) {
+	new Chart(inputelement, {
+		type: type,
+		data: data,
+		options: options
+	});
+};
+
+},{}]},{},[45]);
 
 //# sourceMappingURL=vendor.js.map
