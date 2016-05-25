@@ -29,18 +29,11 @@
   "browser": {
     "jquery": "./node_modules/jquery/dist/jquery.js",
     "jquery-mobile": "./node_modules/jquery-mobile/dist/jquery.mobile.js"
-<<<<<<< HEAD
-  },
-  "browserify-shim": {
-    "jquery": "$",
-    "jquery-mobile" : { "exports": "$.mobile", "depends": [ "jquery:jQuery" ] }
-  },
-=======
+
   }, "browserify-shim": {
    "jquery": "$",
    "jquery-mobile" : { "exports": "$.mobile", "depends": [ "jquery:$" ] }
  }, 
->>>>>>> structure/vendor-functions
   "browserify": {
     "transform": [
       "browserify-shim"
