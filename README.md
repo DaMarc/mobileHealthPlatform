@@ -35,8 +35,11 @@ Der Entwickler muss die Chart-Klasse instanziieren, um ein Diagramm erstellen zu
 aufgerufen. Canvas bedeutet "Leinwand" und dient zur dynamischen Erstellung von Grafiken.
 id="testChart" legt die ID für nachfolgendes Diagramm fest. Die Breite (width) und die Höhe (height) sind - wie die ID - frei wählbar, es muss aber die Größe des anzeigenden Gerätes berücksichtigt werden.
 
-Mit dem Aufruf    <script>
+Mit dem Aufruf    
+
+	<script>
           var ruediger = document.getElementById("testChart");
+
 wird eine Variable instanziiert, es wird der Ausdruck "testChart" angegeben und java-Skript durchsucht das Dokument nach der ID "testChart".
 
 Das folgende Beispiel instanziiert ein Kuchendiagramm/ Kreisdiagramm und stellt die Messung der Pulsfrequenz an einem Tag in 2-Stunden-Abschnitten, beginnend bei 0 dar. 
@@ -63,6 +66,7 @@ Das folgende Beispiel instanziiert ein Kuchendiagramm/ Kreisdiagramm und stellt 
               };
          var myChart = new makeChart(ruediger,'pie',data, options);
         </script>
+        
 Erläuterung zum obrigen Quellcode:
 - var data: ist vom Typ Array und beinhaltet eine Menge von weiteren Elementen, die im Diagramm angezeigt werden sollen, wie z. B.:
 	- labels: vom Typ String und beschreibt das Label des Datensatzes, welcher sich in der Legende befindet.
