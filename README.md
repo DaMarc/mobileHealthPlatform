@@ -107,7 +107,15 @@ Health-Level Seven ist ein Kommunikationsstandard speziell für das Gesundheitsw
 * Vereinheitlichung der Kommunikation
 * Leitfaden
 
-Im 
+Im Folgenden wird zuerst auf den Aufbau der HL7-Nachricht eingegangen, im Anschluss auf den im Framework enthaltenen Programmcode zur Erstellung der HL7-Nachrichten.
+[HL7-Präsentation Johner] [http://www.johner.org/fileadmin/vorlesungen/material/medinf/HL7-V2-HTWG.pdf]
+
+Aufbau:
+Nachrichten-Segment
+Feld
+Komponente
+Sub-Komponente
+PI
 
 
 [package-json]: https://github.com/phonegap/phonegap-template-hello-world/blob/master/config.xml
@@ -117,3 +125,4 @@ Im
 [npm]: https://www.npmjs.com/
 [colorschemedesigner]: http://colorschemedesigner.com/csd-3.5/
 [Diagrammtypen_chartjs.org]: http://www.chartjs.org/docs/#getting-started
+[HL7-Präsentation Johner]: http://www.johner.org/fileadmin/vorlesungen/material/medinf/HL7-V2-HTWG.pdf
