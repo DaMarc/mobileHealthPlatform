@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Mobile Health Platform CAMD</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/vendor.css"/>
+    <script src="/js/vendor.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/phonegap.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    var pictureSource;   // picture source
+    var destinationType; // sets the format of returned value 
+    // Wait for PhoneGap to connect with the device
+    //
+    document.addEventListener("deviceready",onDeviceReady,false);
+    // PhoneGap is ready to be used!
+    //
+    function onDeviceReady() {
+        pictureSource=navigator.camera.PictureSourceType;
+        destinationType=navigator.camera.DestinationType;
+    }
+    // Called when a photo is successfully retrieved
+    //
+    function onPhotoDataSuccess(imageData) {
+      // Get image handle
+      //
+      var smallImage = document.getElementById('smallImage');
+      // Unhide image elements
+      //
+      smallImage.style.display = 'block';
+      // Show the captured photo
+      // The inline CSS rules are used to resize the image
+      //
+      smallImage.src = "data:image/jpeg;base64," + imageData;
+    }
+    
+  // Called when a photo is successfully retrieved
+    //
+    function onPhotoFileSuccess(imageData) {
+      // Get image handle
+      console.log(JSON.stringify(imageData));
+      
+      // Get image handle
+      //
+      var smallImage = document.getElementById('smallImage');
+      // Unhide image elements
+      //
+      smallImage.style.display = 'block';
+      // Show the captured photo
+      // The inline CSS rules are used to resize the image
+      //
+      smallImage.src = imageData;
+    }
+    // Called when a photo is successfully retrieved
+    //
+    function onPhotoURISuccess(imageURI) {
+      // Uncomment to view the image file URI 
+      // console.log(imageURI);
+      // Get image handle
+      //
+      var largeImage = document.getElementById('largeImage');
+      // Unhide image elements
+      //
+      largeImage.style.display = 'block';
+      // Show the captured photo
+      // The inline CSS rules are used to resize the image
+      //
+      largeImage.src = imageURI;
+    }
+    // A button will call this function
+    //
+    function capturePhotoWithData() {
+      // Take picture using device camera and retrieve image as base64-encoded string
+      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50 });
+    }
+    function capturePhotoWithFile() {
+        navigator.camera.getPicture(onPhotoFileSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.FILE_URI });
+    }
+    
+    // A button will call this function
+    //
+    function getPhoto(source) {
+      // Retrieve image file location from specified source
+      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50, 
+        destinationType: destinationType.FILE_URI,
+        sourceType: source });
+    }
+    // Called if something bad happens.
+    // 
+    function onFail(message) {
+      alert('Failed because: ' + message);
+    }
+    </script>
+  </head>
+  <body>
+
+    <!-- Start of first page -->
+    <div data-role="page" id="foo">
+
+      <div data-role="header">
+        <h1>Mobile Health Platform</h1>
+      </div><!-- /header -->
+
+      <div role="main" class="ui-content">
+        <p>Willkommen zur Mobile Health Platform</p>
+        <p><img src="/img/logo_mhp.png" alt="Mobile Health Platform"></p>
+        <div class="callout">
+          <ul>
+            <li><a href="index.html">back</a></li>
+          </ul>
+        </div>
+      </div><!-- /content -->
+
+      <button onclick="capturePhotoWithData();">Aufnahme Data</button> <br>
+    <button onclick="capturePhotoWithFile();">Aufnahme File</button> <br>
+    <button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">Fotoalbum</button><br>
+    <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+    <img style="display:none;" id="largeImage" src="" />
+          
+      <div data-role="footer">
+        <h4>Page Footer</h4>
+      </div><!-- /footer -->
+    </div><!-- /page -->
+
+    <!-- Start of second page -->
+    <div data-role="page" id="bar">
+
+      <div data-role="header">
+        <h1>Bar</h1>
+      </div><!-- /header -->
+
+      <div role="main" class="ui-content">
+        <p>I'm the second in the source order so I'm hidden when the page loads. I'm just shown if a link that references my id is beeing clicked.</p>
+        <p><a href="#foo">Back to foo</a></p>
+      </div><!-- /content -->
+
+    </div>
+
+  </body>
+</html>

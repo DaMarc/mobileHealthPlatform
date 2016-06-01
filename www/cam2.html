@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Foto erfassen</title>
+<script type="text/javascript" charset="utf-8"
+src="cordova-2.0.0.js"></script>
+<script type="text/javascript" charset="utf-8">
+// Warten, bis PhoneGap geladen ist document.addEventListener("deviceready", onDeviceReady, false);
+      var pictureSource; // Bild Quelle
+      var destinationType; // Zielformat
+      // PhoneGap ist bereit.
+      function onDeviceReady() {
+pictureSource = navigator.camera.PictureSourceType;
+destinationType = navigator.camera.DestinationType; }
+// Wird aufgerufen, wenn ein Foto gemacht wurde. //
+function onPhotoDataSuccess(imageData) {
+  
+
+  // Bild-Platzhalter aus dem HTML bekommen
+//
+var smallImage = document.getElementById('smallImage');
+// CSS-Style ändern, um das Bild anzuzeigen //
+smallImage.style.display = 'block';
+// Das Bild anzeigen
+//
+smallImage.src = "data:image/jpeg;base64," + imageData;
+}
+// Wird aufgerufen, wenn ein Foto gemacht wurde. //
+function onPhotoURISuccess(imageURI) {
+// Bild-Platzhalter aus dem HTML bekommen
+//
+var largeImage = document.getElementById('largeImage');
+// CSS-Style ändern, um das Bild anzuzeigen //
+largeImage.style.display = 'block';
+  // Das Bild anzeigen
+  //
+  largeImage.src = imageURI;
+}
+function capturePhoto() { navigator.camera.getPicture(onPhotoDataSuccess, onFail,
+{
+{
+quality: 50,
+destinationType: destinationType.DATA_URL });
+}
+function capturePhotoEdit() { navigator.camera.getPicture(onPhotoDataSuccess, onFail,
+quality: 20,
+allowEdit: true,
+destinationType: destinationType.DATA_URL
+}); }
+function getPhoto(source) { navigator.camera.getPicture(onPhotoURISuccess, onFail, {
+quality: 50,
+destinationType: destinationType.FILE_URI, sourceType: source
+}); }
+
+        alert('Fehler: ' + message);
+} </script>
+</head>
+<body>
+
+<!-- Start of first page -->
+    <div data-role="page" id="foo">
+
+      <div data-role="header">
+        <h1>Mobile Health Platform</h1>
+      </div><!-- /header -->
+
+      <div role="main" class="ui-content">
+        <p>Willkommen zur Mobile Health Platform</p>
+        <p><img src="/img/logo_mhp.png" alt="Mobile Health Platform"></p>
+        <div class="callout">
+          <ul>
+            <li><a href="index.html"><--back</a></li>
+          </ul>
+        </div>
+      </div><!-- /content -->
+
+
+<button onclick="capturePhoto()">Foto erstellen</button>
+<br>
+<br>
+
+<button onclick="getPhoto(pictureSource.PHOTOLIBRARY)">
+       Foto aus der Gallerie</button>
+    <br>
+<br>
+<button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM)">
+       Foto aus dem Album</button>
+    <br>
+<br>
+<img style="display:none;width:60px;height:60px;" id="smallImage"
+src="" />
+<img style="display:none;" id="largeImage" src="" /> 
+
+
+
+
+
+</body>
+</html>
