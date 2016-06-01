@@ -1,3 +1,12 @@
+*Kursiv*, **Fett**, ***Fett Kursiv***   Kursiv, Fett, Fett Kursiv
+Als ‘Queltext’ gekennzeichnet   Ausgabe als Quelltext
+* Aufzählung  Ausgabe mit Punktaufzählung
+1. Aufzählung   Ausgabe als nummerische Aufzählung
+# Überschrift   H1 Überschrift
+#### Überschrift  H4 Überschrift
+_______________________________________________________
+
+
 # Mobile Health Platform
 
 Mobile Health Platform ist ein Framework, dass Funktionen und Module, sowie deren Anwendung für Gesundheits Apps zur Verfügung stellt. 
@@ -38,7 +47,7 @@ id="testChart" legt die ID für nachfolgendes Diagramm fest. Die Breite (width) 
 Mit dem Aufruf    
 
 	<script>
-          var ruediger = document.getElementById("testChart");
+          var ctx = document.getElementById("testChart");
 
 wird eine Variable instanziiert, es wird der Ausdruck "testChart" angegeben und java-Skript durchsucht das Dokument nach der ID "testChart".
 
@@ -90,11 +99,15 @@ Line Chart = Liniendiagramm
 
 Diese wären ebenso wie das Kuchendiagramm (Pie) zu generieren. Weitere Datentypen für die jeweiligen Diagramme finden Sie [hier][Diagrammtypen_chartjs.org]
 
+### HL7 (Health-Level Seven)
 
+Health-Level Seven ist ein Kommunikationsstandard speziell für das Gesundheitswesen, welcher primär für die Kommunikation im Krankenhaus verwendet wird. Ziele des Einsatzes von HL7 wären
+* Effizienz und Qualität medizinischer Versorgung verbessern
+* Integration von Anwendungssystemen erleichtern
+* Vereinheitlichung der Kommunikation
+* Leitfaden
 
-
-
-
+Im 
 
 
 [package-json]: https://github.com/phonegap/phonegap-template-hello-world/blob/master/config.xml
