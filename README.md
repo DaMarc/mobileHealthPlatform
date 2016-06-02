@@ -107,7 +107,43 @@ Health-Level Seven ist ein Kommunikationsstandard speziell für das Gesundheitsw
 * Vereinheitlichung der Kommunikation
 * Leitfaden
 
-Im 
+Im Folgenden wird zuerst auf den Aufbau der HL7-Nachricht eingegangen, im Anschluss auf den im Framework enthaltenen Programmcode zur Erstellung der HL7-Nachrichten.
+[HL7-Präsentation Johner] [http://www.johner.org/fileadmin/vorlesungen/material/medinf/HL7-V2-HTWG.pdf]
+
+Aufbau:
+Nachrichten-Segment
+Feld
+Komponente
+Sub-Komponente
+
+*Segment-ID
+<table><tr><th>Segment-ID</th><th>Beschreibung</th></tr>
+<tr><th>MSH</th><th>Message-Header</th></tr>
+<tr><th>EVN</th><th>Event</th></tr>
+<tr><th>PID</th><th>Patienten-Information</th></tr>
+<tr><th>PV1</th><th>Patient Visit</th></tr>
+<tr><th>OBR</th><th>Observation Request</th></tr>
+<tr><th>OBX</th><th>Observation Result</th></tr>
+<tr><th>DG1</th><th>Diagnosis z. B. ICD-Code</th></tr>
+<tr><th>PR1</th><th>Procedure</th></tr>
+<tr><th>FT1</th><th>Financial Transaction z. B. DRG-Code</th></tr></table>
+
+Diese Elemente beschreiben die Segment-ID, welche bei jeder HL7-Nachricht im Ersten Abschnitt des jeweiligen Elements steht.
+
+Beispiel: MSH|^~\&|KIS|Aufn|PDMS||200907110801||ADTA01|20090711080104|P|2.3|||||D
+
+Nach Message-Header erfolgt durch "|", welches das Trennzeichen bezeichnet, ein neues Feld.
+
+<table><tr><th>Position</th><th>Beschreibung</th><th>Standardzeichen</th></tr>
+<tr><th>1</th><th>Komponententrenner</th><th>^</th></tr>
+<tr><th>2</th><th>Wiederholungstrenner</th><th>~</th></tr>
+<tr><th>3</th><th>Escape-Symbol</th><th>\</th></tr>
+<tr><th>4</th><th>Subkomponententrenner</th><th>&</th></tr></table>
+
+In diesem Projekt finden Sie die Ver- und Entschlüsselung der HL7-Nachrichten vom Message Type "ADT".
+ADT beschreibt eine Patientenstammdaten-Nachricht (Admission-Discharge-Transfer).
+
+
 
 
 [package-json]: https://github.com/phonegap/phonegap-template-hello-world/blob/master/config.xml
@@ -117,3 +153,4 @@ Im
 [npm]: https://www.npmjs.com/
 [colorschemedesigner]: http://colorschemedesigner.com/csd-3.5/
 [Diagrammtypen_chartjs.org]: http://www.chartjs.org/docs/#getting-started
+[HL7-Präsentation Johner]: http://www.johner.org/fileadmin/vorlesungen/material/medinf/HL7-V2-HTWG.pdf
