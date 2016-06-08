@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="/css/vendor.css"/>
-    <script src="/js/vendor.js"></script>
+    <link rel="stylesheet" href="css/vendor.css"/>
+    <script src="js/vendor.js"></script>
 
   </head>
   <body>
@@ -21,10 +21,13 @@
 
       <div role="main" class="ui-content">
         <p>Willkommen zur Mobile Health Platform</p>
-        <p><img src="/img/logo_mhp.png" alt="Mobile Health Platform"></p>
+        <p><img src="img/logo_mhp.png" alt="Mobile Health Platform"></p>
         <div class="callout">
           <ul>
-            <li><a href="charts.html">Diagramme</a></li>
+            <li><a href="#charts">Diagramme</a></li>
+            <li><a href="#camera">Kamera</a></li>
+            <li><a href="#barcode">Barcode</a></li>
+            <li><a href="#hl7">HL7</a></li>
           </ul>
         </div>
       </div><!-- /content -->
@@ -34,19 +37,160 @@
       </div><!-- /footer -->
     </div><!-- /page -->
 
-    <!-- Start of second page -->
-    <div data-role="page" id="bar">
+    <!-- Start of chartJS page -->
+    <div data-role="page" id="charts">
 
       <div data-role="header">
-        <h1>Bar</h1>
+        <h1>Diagramme</h1>
       </div><!-- /header -->
 
       <div role="main" class="ui-content">
-        <p>I'm the second in the source order so I'm hidden when the page loads. I'm just shown if a link that references my id is beeing clicked.</p>
-        <p><a href="#foo">Back to foo</a></p>
+        <p>Hier sind 3 Beispiele für verschiedene Chart Diagramme aufgeführt.</p>
+        <p>Gehe zu <a href="#line">Linien Diagramm</a></p>
+        <p>Gehe zu <a href="#bar">Balken Diagramm</a></p>
+        <p>Gehe zu <a href="#pie">Torten Diagramm</a></p>
+        <p>Gehe zurück zu <a href="/">home</a></p>
+
       </div><!-- /content -->
 
     </div>
 
+    <!-- Start of line chart page -->
+    <div data-role="page" id="line">
+
+      <div data-role="header">
+        <h1>Linien Diagramm</h1>
+      </div><!-- /header -->
+
+      <div role="main" class="ui-content">
+         
+        <canvas id="lineChart" width="200" height="200"></canvas>
+
+        <script>
+          var ctx = document.getElementById("lineChart");
+
+          var data = {
+              labels: ["06:55", "08:00", "12:00", "14:01", "16:05", "18:00", "20:02"],
+              datasets: [{
+                  label: '# pulse frequencies Monday',
+                  data: [77, 65, 90, 67, 64, 88, 87],
+                  backgroundColor: 'rgba(25,91,105,0.6)'
+              }]
+            };
+          var options = {
+                  scales: {
+                      yAxes: [{
+                          ticks: {
+                              beginAtZero:false
+                          }
+                      }]
+                  }
+              };
+
+          var myLineChart = new makeChart(ctx,'line',data, options);
+        </script>
+
+        <p>Gehe <a href="#foo">zurück</a></p>
+      </div><!-- /content -->
+
+    </div><!-- /page -->
+
+    <!-- Start of bar chart page -->
+    <div data-role="page" id="bar">
+
+      <div data-role="header">
+        <h1>Balken Diagramm</h1>
+      </div><!-- /header -->
+
+      <div role="main" class="ui-content">
+         
+        <canvas id="barChart" width="200" height="200"></canvas>
+
+        <script>
+          var ctx = document.getElementById("barChart");
+
+          var data = {
+              labels: ["06:55", "08:00", "12:00", "14:01", "16:05", "18:00", "20:02"],
+              datasets: [{
+                  label: '# pulse frequencies Monday',
+                  data: [77, 65, 90, 67, 64, 88, 87],
+                  backgroundColor: 'rgba(190,52,5,0.4)'
+              }]
+            };
+          var options = {
+                  scales: {
+                      yAxes: [{
+                          ticks: {
+                              beginAtZero:false
+                          }
+                      }]
+                  }
+              };
+
+          var myBarChart = new makeChart(ctx,'bar',data, options);
+        </script>
+
+        <p>Gehe <a href="#foo">zurück</a></p>
+      </div><!-- /content -->
+
+    </div><!-- /page -->
+
+    <!-- Start of pie chart page -->
+    <div data-role="page" id="pie">
+
+      <div data-role="header">
+        <h1>Torten Diagramm</h1>
+      </div><!-- /header -->
+
+      <div role="main" class="ui-content">
+         
+        <canvas id="pieChart" width="200" height="200"></canvas>
+
+        <script>
+          var ctx = document.getElementById("pieChart");
+
+          var data = {
+              labels: ["06:55", "08:00", "12:00", "14:01", "16:05", "18:00", "20:02"],
+              datasets: [{
+                  label: '# pulse frequencies Monday',
+                  data: [77, 65, 90, 67, 64, 88, 87],
+                  backgroundColor: 'rgba(185,179,163,0.4)'
+              }]
+            };
+          var options = {
+                  scales: {
+                      yAxes: [{
+                          ticks: {
+                              beginAtZero:false
+                          }
+                      }]
+                  }
+              };
+
+          var myPieChart = new makeChart(ctx,'pie',data, options);
+        </script>
+
+        <p>Gehe <a href="#foo">zurück</a></p>
+      </div><!-- /content -->
+
+    </div><!-- /page -->
+
+    <!-- Start of camera page -->
+    <div data-role="page" id="camera">
+      
+      <div data-role="header">
+        <h1>Cameasdfra</h1>
+      </div><!-- /header -->
+
+
+      <div role="main" class="ui-content">
+        <p>camera plugin</p>
+      </div><!-- /content -->
+
+      <div data-role="footer">
+        <h4>footer</h4>
+      </div><!-- /footer -->
+
+    </div><!-- /page -->
   </body>
 </html>
