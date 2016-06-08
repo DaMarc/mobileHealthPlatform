@@ -145,7 +145,7 @@ ADT beschreibt eine Patientenstammdaten-Nachricht (Admission-Discharge-Transfer)
 
 ### Smartphone Camera
 
-Im Folgenden wird beschrieben, wie auf die Kamera auf eines Smartphones zugreifen und Aufnahmen tätigen kann. Des Weiteren ist es möglich, Fotos abzuspeichern oder Fotos in der eigenen Gallerie / im eigenen Album abzulegen und/oder zuzugreifen.
+Im Folgenden wird beschrieben, wie auf die Kamera eines Smartphones zugreifen und Aufnahmen tätigen kann. Des Weiteren ist es möglich, Fotos abzuspeichern oder Fotos in der eigenen Gallerie / im eigenen Album abzulegen und/oder zuzugreifen.
 
 
 
