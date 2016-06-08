@@ -1,3 +1,12 @@
+*Kursiv*, **Fett**, ***Fett Kursiv***   Kursiv, Fett, Fett Kursiv
+Als ‘Queltext’ gekennzeichnet   Ausgabe als Quelltext
+* Aufzählung  Ausgabe mit Punktaufzählung
+1. Aufzählung   Ausgabe als nummerische Aufzählung
+# Überschrift   H1 Überschrift
+#### Überschrift  H4 Überschrift
+_______________________________________________________
+
+
 # Mobile Health Platform
 
 Mobile Health Platform ist ein Framework, dass Funktionen und Module, sowie deren Anwendung für Gesundheits Apps zur Verfügung stellt. 
@@ -38,7 +47,7 @@ id="testChart" legt die ID für nachfolgendes Diagramm fest. Die Breite (width) 
 Mit dem Aufruf    
 
 	<script>
-          var ruediger = document.getElementById("testChart");
+          var ctx = document.getElementById("testChart");
 
 wird eine Variable instanziiert, es wird der Ausdruck "testChart" angegeben und java-Skript durchsucht das Dokument nach der ID "testChart".
 
@@ -90,9 +99,53 @@ Line Chart = Liniendiagramm
 
 Diese wären ebenso wie das Kuchendiagramm (Pie) zu generieren. Weitere Datentypen für die jeweiligen Diagramme finden Sie [hier][Diagrammtypen_chartjs.org]
 
+### HL7 (Health-Level Seven)
 
+Health-Level Seven ist ein Kommunikationsstandard speziell für das Gesundheitswesen, welcher primär für die Kommunikation im Krankenhaus verwendet wird. Ziele des Einsatzes von HL7 wären
+* Effizienz und Qualität medizinischer Versorgung verbessern
+* Integration von Anwendungssystemen erleichtern
+* Vereinheitlichung der Kommunikation
+* Leitfaden
 
+Im Folgenden wird zuerst auf den Aufbau der HL7-Nachricht eingegangen, im Anschluss auf den im Framework enthaltenen Programmcode zur Erstellung der HL7-Nachrichten.
+[HL7-Präsentation Johner] [http://www.johner.org/fileadmin/vorlesungen/material/medinf/HL7-V2-HTWG.pdf]
 
+Aufbau:
+Nachrichten-Segment
+Feld
+Komponente
+Sub-Komponente
+
+*Segment-ID
+<table><tr><th>Segment-ID</th><th>Beschreibung</th></tr>
+<tr><th>MSH</th><th>Message-Header</th></tr>
+<tr><th>EVN</th><th>Event</th></tr>
+<tr><th>PID</th><th>Patienten-Information</th></tr>
+<tr><th>PV1</th><th>Patient Visit</th></tr>
+<tr><th>OBR</th><th>Observation Request</th></tr>
+<tr><th>OBX</th><th>Observation Result</th></tr>
+<tr><th>DG1</th><th>Diagnosis z. B. ICD-Code</th></tr>
+<tr><th>PR1</th><th>Procedure</th></tr>
+<tr><th>FT1</th><th>Financial Transaction z. B. DRG-Code</th></tr></table>
+
+Diese Elemente beschreiben die Segment-ID, welche bei jeder HL7-Nachricht im Ersten Abschnitt des jeweiligen Elements steht.
+
+Beispiel: MSH|^~\&|KIS|Aufn|PDMS||200907110801||ADTA01|20090711080104|P|2.3|||||D
+
+Nach Message-Header erfolgt durch "|", welches das Trennzeichen bezeichnet, ein neues Feld.
+
+<table><tr><th>Position</th><th>Beschreibung</th><th>Standardzeichen</th></tr>
+<tr><th>1</th><th>Komponententrenner</th><th>^</th></tr>
+<tr><th>2</th><th>Wiederholungstrenner</th><th>~</th></tr>
+<tr><th>3</th><th>Escape-Symbol</th><th>\</th></tr>
+<tr><th>4</th><th>Subkomponententrenner</th><th>&</th></tr></table>
+
+In diesem Projekt finden Sie die Ver- und Entschlüsselung der HL7-Nachrichten vom Message Type "ADT".
+ADT beschreibt eine Patientenstammdaten-Nachricht (Admission-Discharge-Transfer).
+
+### Smartphone Camera
+
+Im Folgenden wird beschrieben, wie auf die Kamera eines Smartphones zugreifen und Aufnahmen tätigen kann. Des Weiteren ist es möglich, Fotos abzuspeichern oder Fotos in der eigenen Gallerie / im eigenen Album abzulegen und/oder zuzugreifen.
 
 
 
@@ -104,3 +157,4 @@ Diese wären ebenso wie das Kuchendiagramm (Pie) zu generieren. Weitere Datentyp
 [npm]: https://www.npmjs.com/
 [colorschemedesigner]: http://colorschemedesigner.com/csd-3.5/
 [Diagrammtypen_chartjs.org]: http://www.chartjs.org/docs/#getting-started
+[HL7-Präsentation Johner]: http://www.johner.org/fileadmin/vorlesungen/material/medinf/HL7-V2-HTWG.pdf
