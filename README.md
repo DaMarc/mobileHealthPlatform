@@ -147,6 +147,15 @@ ADT beschreibt eine Patientenstammdaten-Nachricht (Admission-Discharge-Transfer)
 
 Im Folgenden wird beschrieben, wie auf die Kamera eines Smartphones zugreifen und Aufnahmen tätigen kann. Des Weiteren ist es möglich, Fotos abzuspeichern oder Fotos in der eigenen Gallerie / im eigenen Album abzulegen und/oder zuzugreifen.
 
+### Barcodescan 
+
+Die weitere Funktion Barcodescan wurde kodiert, um mittels der Kamerafunktion das gewünschte Barcode wie zum Beispiel den Link schnell scannen zu können. 
+
+Kodierung:
+Dafür wurden der Button und das PlugIn eingefügt, die die Teile der einwandfreien Funktion Barcode sind. 
+
+Feedback: 
+Noch funktioniert es nicht einwandfrei. 
 
 
 
